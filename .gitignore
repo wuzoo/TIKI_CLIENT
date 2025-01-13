@@ -22,6 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env
+
+**/next-env.d.ts
+**/.env
+
 *storybook.log
-storybook-static/*
+storybook-static
+
+**/__generated__/*
