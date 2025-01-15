@@ -2,13 +2,13 @@ import { Modal } from '@tiki/ui';
 
 import { Suspense } from 'react';
 
-import { BlockFlow } from '@/page/archiving/index/component/TimeBlockModal';
-
 import ActivityTagModal from '@/shared/component/ActivityTagModal/ActivityTagModal';
 import CautionModal from '@/shared/component/CautionModal/CautionModal';
 import DeletedModal from '@/shared/component/DeletedModal/DeletedModal';
+import FileImportModal from '@/shared/component/FileImportModal/FileImportModal';
 import InviteModal from '@/shared/component/InviteModal/InviteModal';
 import MemberTagModal from '@/shared/component/MemberTagModal/MemberTagModal';
+import { BlockFlow } from '@/shared/component/TimeBlockModal';
 import { WorkSpaceFlow } from '@/shared/component/WorkSpaceModal/index';
 import { BlockProvider } from '@/shared/hook/common/useBlockContext';
 import { FunnelProvider } from '@/shared/hook/common/useFunnel';
@@ -60,17 +60,11 @@ const ModalFunnel = () => {
           </FunnelStep>
         );
       case 'member-tag':
-        return (
-          <FunnelStep step={1}>
-            <MemberTagModal />
-          </FunnelStep>
-        );
+        return <MemberTagModal />;
       case 'activity-tag':
-        return (
-          <FunnelStep step={1}>
-            <ActivityTagModal />
-          </FunnelStep>
-        );
+        return <ActivityTagModal />;
+      case 'file':
+        return <FileImportModal />;
       case 'caution':
         if (isCautionModalData(modalData)) {
           return (
