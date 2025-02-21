@@ -54,7 +54,7 @@ const ModalFooterButtons = (
     case 'create-workspace':
       return [
         step >= 3 ? createButton('건너뛰기', onClick, 'outline') : null,
-        createButton(step === 5 ? '확인' : '다음으로', onClick, 'primary'),
+        createButton(step === 5 ? '확인' : '다음으로', onClick, 'primary', disabled),
       ].filter(Boolean) as FooterButton[];
 
     case 'create-block':
@@ -71,6 +71,9 @@ const ModalFooterButtons = (
 
     case 'deleted':
       return [createButton('취소', onClose, 'outline'), createButton('삭제', onClick, 'delete')];
+
+    case 'leave':
+      return [createButton('취소', onClose, 'outline'), createButton('탈퇴', onClick, 'delete')];
 
     case 'invite':
       return [createButton('취소', onClose, 'outline'), createButton('완료', onClick, 'primary', disabled)];
