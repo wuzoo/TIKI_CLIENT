@@ -26,7 +26,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "date-fns": "^4.1.0",
-    "lottie-react": "^2.4.0",
+    "lottie-react": "2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "zustand": "^5.0.0"
@@ -38,10 +38,5 @@
     "concurrently": "^9.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "lottie-react@2.4.0": "patches/lottie-react@2.4.0.patch"
-    }
   }
 }
